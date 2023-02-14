@@ -31,16 +31,16 @@ export default function Ordenador({ ordenador, setOrdenador }: Props) {
         [styles.ordenador__options]: true,
         [styles['ordenador__options--ativo']]: aberto,
       })}>{
-        opcoes.map(opcao => (
-          <div 
-            className={styles.ordenador__option} 
-            key={opcao.value} 
-            onClick={() => setOrdenador(opcao.value as OpcoesOrdenador)}
-          >
-            {opcao.nome}
-          </div>
-        ))
-      }</div>
+          opcoes.map(opcao => (
+            <div 
+              className={styles.ordenador__option} 
+              key={opcao.value} 
+              onClick={() => setOrdenador(opcao.value as OpcoesOrdenador)}
+            >
+              {opcao.nome}
+            </div>
+          ))
+        }</div>
     </button>
   );
 }

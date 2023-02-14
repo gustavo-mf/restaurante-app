@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Item from './Item';
-import cardapio from './itens.json';
+import cardapio from 'data/cardapio.json';
 import styles from './Itens.module.scss';
 
 interface Props {
@@ -29,17 +29,17 @@ export default function Itens(props: Props) {
 
   function ordenar(novaLista: typeof cardapio) {
     switch(ordenador) {
-      case 'porcao':
+    case 'porcao':
       return ordernarPropriedadeCrescente(novaLista, 'size');
 
-      case 'qtd_pessoas':
+    case 'qtd_pessoas':
       return ordernarPropriedadeCrescente(novaLista, 'serving');
       
 
-      case 'preco':
+    case 'preco':
       return ordernarPropriedadeCrescente(novaLista, 'price');
 
-      default:
+    default:
       return novaLista;
     }
   }
